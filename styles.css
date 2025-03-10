@@ -1,8 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
 body {
-    background-color: #ffccf9;
-    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #ffccf9, #c2e9fb);
+    font-family: 'Poppins', sans-serif;
     text-align: center;
     padding: 50px;
+    background-size: 400% 400%;
+    animation: gradient-bg 10s ease infinite;
+    cursor: url('https://upload.wikimedia.org/wikipedia/commons/2/21/Dice-6.svg'), auto;
+    font-size: 18px;  /* Μεγαλύτερο κείμενο για καλύτερη ανάγνωση */
+}
+
+@keyframes gradient-bg {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
 }
 
 .container {
@@ -16,7 +27,8 @@ body {
 
 h1 {
     color: #333;
-    font-size: 36px;
+    font-size: 40px;  /* Μεγαλύτερο μέγεθος τίτλου */
+    font-weight: 600;  /* Πιο έντονα γράμματα για τον τίτλο */
 }
 
 .dice-container {
@@ -26,7 +38,7 @@ h1 {
 }
 
 .dice {
-    font-size: 100px;
+    font-size: 120px;  /* Μεγαλύτερα ζάρια */
     margin: 0 20px;
     transition: transform 3s ease-in-out;
 }
@@ -35,36 +47,63 @@ h1 {
     animation: roll 3s ease-in-out;
 }
 
+.dice.glow {
+    animation: glow 1s infinite alternate;
+}
+
 @keyframes roll {
     0% { transform: rotate(0deg); }
     50% { transform: rotate(720deg); }
     100% { transform: rotate(0deg); }
 }
 
+@keyframes glow {
+    from { text-shadow: 0 0 5px #fff, 0 0 10px #fff; }
+    to { text-shadow: 0 0 20px #ff69b4, 0 0 30px #ff69b4; }
+}
+
 .roll-button {
-    background-color: #fffacd;
+    background: linear-gradient(135deg, #fffacd, #f0e68c);
     border: none;
     color: #333;
     padding: 15px 40px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 22px;
+    font-size: 24px;  /* Μεγαλύτερο κείμενο στο κουμπί */
     border-radius: 15px;
     cursor: pointer;
     margin-bottom: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    transition: background-color 0.3s, transform 0.3s;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
 }
 
 .roll-button:hover {
-    background-color: #f0e68c;
+    background-color: #ffeb99;
     transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(255, 223, 0, 0.6);
 }
 
 .message {
     color: #333;
-    font-weight: bold;
+    font-weight: 600;  /* Πιο έντονο κείμενο για τα μηνύματα */
     margin-top: 20px;
-    font-size: 20px;
+    font-size: 24px;  /* Μεγαλύτερο μέγεθος για τα μηνύματα */
+    transition: opacity 0.5s;
 }
+
+.message.win {
+    color: #4CAF50;
+    animation: message-pop 1s forwards;
+}
+
+.message.lose {
+    color: #f44336;
+    animation: message-pop 1s forwards;
+}
+
+@keyframes message-pop {
+    0% { transform: scale(0.8); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
