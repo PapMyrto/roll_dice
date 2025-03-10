@@ -1,40 +1,3 @@
-body {
-    background: linear-gradient(135deg, #ffccf9, #c2e9fb, #f9f871, #ff9a9e, #a1c4fd);
-    font-family: 'Poppins', sans-serif;
-    text-align: center;
-    padding: 50px;
-    background-size: 400% 400%;
-    animation: gradient-bg 3s ease infinite;  /* Πιο γρήγορη αλλαγή χρωμάτων */
-    cursor: url('https://upload.wikimedia.org/wikipedia/commons/2/21/Dice-6.svg'), auto;
-    font-size: 18px;
-}
-
-@keyframes gradient-bg {
-    0% { background-position: 0% 50%; }
-    100% { background-position: 100% 50%; }
-}
-
-.container {
-    background-color: #fff;
-    border-radius: 15px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
-    display: inline-block;
-    padding: 40px;
-    width: 70%;
-}
-
-h1 {
-    color: #333;
-    font-size: 40px;
-    font-weight: 600;
-}
-
-.dice-container {
-    display: flex;
-    justify-content: center;
-    margin: 30px 0;
-}
-
 .dice {
     font-size: 120px;
     margin: 0 20px;
@@ -49,44 +12,4 @@ h1 {
     0% { transform: rotate(0deg); }
     50% { transform: rotate(720deg); }
     100% { transform: rotate(0deg); }
-}
-
-.roll-button {
-    background: linear-gradient(135deg, #fffacd, #f0e68c);
-    border: none;
-    color: #333;
-    padding: 15px 40px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 24px;
-    border-radius: 15px;
-    cursor: pointer;
-    margin-bottom: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
-}
-
-.roll-button:hover {
-    background-color: #ffeb99;
-    transform: scale(1.05);
-    box-shadow: 0 0 20px rgba(255, 223, 0, 0.6);
-}
-
-.message {
-    color: #333;
-    font-weight: 600;
-    margin-top: 20px;
-    font-size: 24px;
-    transition: opacity 0.5s;
-}
-
-.message.win {
-    color: #4CAF50;
-    animation: message-pop 1s forwards;
-}
-
-.message.lose {
-    color: #f44336;
-    animation: message-pop 1s forwards;
 }
