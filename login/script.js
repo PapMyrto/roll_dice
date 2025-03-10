@@ -25,7 +25,8 @@ function login() {
     if (users[username] && users[username] === password) {
         message.textContent = "Σύνδεση επιτυχής! Καλώς ήρθες!";
         setTimeout(() => {
-            window.location.href = "index.html";
+            window.location.href = "../index.html";
+
         }, 1500);
     } else {
         message.textContent = "Λάθος όνομα χρήστη ή κωδικός!";
