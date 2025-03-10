@@ -1,14 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
-
 body {
-    background: linear-gradient(135deg, #ffccf9, #c2e9fb);
+    background: linear-gradient(135deg, #ffccf9, #c2e9fb, #f9f871, #ff9a9e, #a1c4fd);
     font-family: 'Poppins', sans-serif;
     text-align: center;
     padding: 50px;
     background-size: 400% 400%;
-    animation: gradient-bg 10s ease infinite;
+    animation: gradient-bg 3s ease infinite;  /* Πιο γρήγορη αλλαγή χρωμάτων */
     cursor: url('https://upload.wikimedia.org/wikipedia/commons/2/21/Dice-6.svg'), auto;
-    font-size: 18px;  /* Μεγαλύτερο κείμενο για καλύτερη ανάγνωση */
+    font-size: 18px;
 }
 
 @keyframes gradient-bg {
@@ -27,8 +25,8 @@ body {
 
 h1 {
     color: #333;
-    font-size: 40px;  /* Μεγαλύτερο μέγεθος τίτλου */
-    font-weight: 600;  /* Πιο έντονα γράμματα για τον τίτλο */
+    font-size: 40px;
+    font-weight: 600;
 }
 
 .dice-container {
@@ -38,7 +36,7 @@ h1 {
 }
 
 .dice {
-    font-size: 120px;  /* Μεγαλύτερα ζάρια */
+    font-size: 120px;
     margin: 0 20px;
     transition: transform 3s ease-in-out;
 }
@@ -47,19 +45,10 @@ h1 {
     animation: roll 3s ease-in-out;
 }
 
-.dice.glow {
-    animation: glow 1s infinite alternate;
-}
-
 @keyframes roll {
     0% { transform: rotate(0deg); }
     50% { transform: rotate(720deg); }
     100% { transform: rotate(0deg); }
-}
-
-@keyframes glow {
-    from { text-shadow: 0 0 5px #fff, 0 0 10px #fff; }
-    to { text-shadow: 0 0 20px #ff69b4, 0 0 30px #ff69b4; }
 }
 
 .roll-button {
@@ -70,7 +59,7 @@ h1 {
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 24px;  /* Μεγαλύτερο κείμενο στο κουμπί */
+    font-size: 24px;
     border-radius: 15px;
     cursor: pointer;
     margin-bottom: 20px;
@@ -86,9 +75,9 @@ h1 {
 
 .message {
     color: #333;
-    font-weight: 600;  /* Πιο έντονο κείμενο για τα μηνύματα */
+    font-weight: 600;
     margin-top: 20px;
-    font-size: 24px;  /* Μεγαλύτερο μέγεθος για τα μηνύματα */
+    font-size: 24px;
     transition: opacity 0.5s;
 }
 
@@ -101,9 +90,3 @@ h1 {
     color: #f44336;
     animation: message-pop 1s forwards;
 }
-
-@keyframes message-pop {
-    0% { transform: scale(0.8); opacity: 0; }
-    100% { transform: scale(1); opacity: 1; }
-}
-
