@@ -25,7 +25,7 @@ function login() {
     if (users[username] && users[username] === password) {
         message.textContent = "Σύνδεση επιτυχής! Καλώς ήρθες!";
         setTimeout(() => {
-            window.location.href = "../index.html";
+            window.location.href = "../game.html";
 
         }, 1500);
     } else {
