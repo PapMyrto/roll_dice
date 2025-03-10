@@ -24,13 +24,24 @@
     function rollDice() {
         const dice = document.querySelectorAll(".dice");
         const diceFaces = ["⚀", "⚁", "⚂", "⚃", "⚄", "⚅"];
+        let total = 0;
+
         dice.forEach(die => {
             die.classList.add("rolling");
             setTimeout(() => {
                 const randomFace = Math.floor(Math.random() * 6);
                 die.textContent = diceFaces[randomFace];
                 die.classList.remove("rolling");
-            }, 500);
+                total += randomFace + 1;
+                if (total > 0 && dice[dice.length - 1] === die) {
+                    const message = document.querySelector(".message");
+                    if (total % 2 === 0) {
+                        message.textContent = "Κέρδισες!";
+                    } else {
+                        message.textContent = "Έχασες!";
+                    }
+                }
+            }, 3000); 
         });
     }
 </script>
