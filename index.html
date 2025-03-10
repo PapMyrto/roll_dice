@@ -20,11 +20,15 @@
     <p class="message">Πάτα το κουμπί για να ρίξεις τα ζάρια</p>
 </div>
 
+<audio id="dice-sound" src="https://www.soundjay.com/button/beep-07.wav" preload="auto"></audio>
+
 <script>
     function rollDice() {
         const dice = document.querySelectorAll(".dice");
         const diceFaces = ["⚀", "⚁", "⚂", "⚃", "⚄", "⚅"];
+        const sound = document.getElementById("dice-sound");
         let total = 0;
+        sound.play();
 
         dice.forEach(die => {
             die.classList.add("rolling");
@@ -32,19 +36,23 @@
                 const randomFace = Math.floor(Math.random() * 6);
                 die.textContent = diceFaces[randomFace];
                 die.classList.remove("rolling");
+                die.classList.add("glow");
                 total += randomFace + 1;
                 if (total > 0 && dice[dice.length - 1] === die) {
                     const message = document.querySelector(".message");
                     if (total % 2 === 0) {
                         message.textContent = "Κέρδισες!";
+                        message.classList.add("win");
                     } else {
                         message.textContent = "Έχασες!";
+                        message.classList.add("lose");
                     }
                 }
-            }, 3000); 
+            }, 3000);
         });
     }
 </script>
 
 </body>
 </html>
+
