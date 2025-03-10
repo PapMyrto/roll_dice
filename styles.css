@@ -28,23 +28,23 @@ h1 {
 .dice {
     font-size: 100px;
     margin: 0 20px;
-    transition: transform 0.5s ease-in-out;
+    transition: transform 3s ease-in-out;
 }
 
 .dice.rolling {
-    animation: roll 0.5s ease-in-out;
+    animation: roll 3s ease-in-out;
 }
 
 @keyframes roll {
     0% { transform: rotate(0deg); }
-    50% { transform: rotate(360deg); }
+    50% { transform: rotate(720deg); }
     100% { transform: rotate(0deg); }
 }
 
 .roll-button {
-    background-color: #ff69b4;
+    background-color: #fffacd;
     border: none;
-    color: white;
+    color: #333;
     padding: 15px 40px;
     text-align: center;
     text-decoration: none;
@@ -58,7 +58,7 @@ h1 {
 }
 
 .roll-button:hover {
-    background-color: #ff85c2;
+    background-color: #f0e68c;
     transform: scale(1.05);
 }
 
